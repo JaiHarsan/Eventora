@@ -1,11 +1,21 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ onMenuClick }) {
   return (
-    <div className="bg-green-500 text-white text-center p-4 text-2x1 ">
-      <h2 className="text-xl font-bold">Event Discovery Platform</h2>
-    </div>
-  )
+    <header className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4">
+      <Link to="/" className="text-lg font-bold text-green-600">
+        Eventora
+      </Link>
+
+      <button
+        type="button"
+        onClick={onMenuClick}
+        className="border border-gray-300 px-2 py-1 text-sm text-black md:hidden"
+      >
+        Menu
+      </button>
+    </header>
+  );
 }
 
-export default Navbar
+export default Navbar;
